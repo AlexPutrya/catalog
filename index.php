@@ -3,7 +3,7 @@ $menu = [
     ['href'=>'home', 'value'=>'Главная'],
     ['href'=>'catalog', 'value'=>'Каталог'],
     ['href'=>'about', 'value'=>'О нас'],
-    ['href'=>'info', 'value'=>'Контакты']
+    ['href'=>'contacts', 'value'=>'Контакты']
 ];
 if(isset($_GET['page'])){
     $page = htmlspecialchars($_GET['page']);
