@@ -1,0 +1,17 @@
+.bt_active{
+    background-color: red;
+}
+a{
+    font-style: none;
+}
+li{
+    display: inline;
+    margin: 0 10px 0 10px;
+}
+.authorization{
+    position: absolute;
+    right: 50px;
+}
+body{
+    background-color: grey;
+}
