@@ -14,6 +14,7 @@ if(isset($_GET['page'])){
 ?>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title><?php echo $page?></title>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
