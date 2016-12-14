@@ -1,4 +1,4 @@
-<form class="authorization" action="index.php" method="post">
+<form class="authorization" action="index.php?page=home" method="post">
 Логин<br>
 <input type="text" name="user_login"><br>
 Пароль<br>

@@ -1,4 +1,7 @@
 <?php
+spl_autoload_register(function($class_name){
+    include 'classes/' . $class_name . '.php';
+});
 $menu = [
     ['href'=>'home', 'value'=>'Главная'],
     ['href'=>'catalog', 'value'=>'Каталог'],
@@ -34,7 +37,7 @@ if(isset($_GET['page'])){
         include "template/authorization.tpl";
         
         include "template/$page.tpl";
-        
+        $database = new DB();
         ?>
         
     </body>

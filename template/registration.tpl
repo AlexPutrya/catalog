@@ -1,5 +1,5 @@
 <h1>Регистрация</h1>
-<form action="index.php" method="post"><br>
+<form action="index.php?page=home" method="post"><br>
 	Имя<br>
 	<input type="text" name="user_name"><br>
 	Логин(email)<br>
