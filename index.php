@@ -37,7 +37,6 @@ if(isset($_GET['page'])){
         include "template/authorization.tpl";
         
         include "template/$page.tpl";
-        $database = new DB();
         ?>
         
     </body>
