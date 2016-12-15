@@ -10,7 +10,7 @@ class Registration{
 	public function __construct($user_name, $user_login, $user_password, $repeat_password, $sex){
 		$this->user_name = $user_name;
 		$this->user_login = $user_login;
-		$this->password = $password;
+		$this->password = $user_password;
 		$this->repeat_password = $repeat_password;
 		$this->sex = $sex;
 		$this->database = new DB();
@@ -28,11 +28,12 @@ class Registration{
 		}else{
 			$sql ='SELECT email FROM users WHERE email = :email';
 			$parametr = array("email" => "$this->user_login");
-			$result = $this->database->myQuery($sql, $parametr);
+			$result = $this->database->myQuery($sql, $parametr, 'get');
 			if($result){
-				return true;
-			}else{
+				echo "Пользователь с таким логином уже зарегистрирован";
 				return false;
+			}else{
+				return true;
 			}
 		}
 	}
@@ -50,17 +51,17 @@ class Registration{
 
 	public function registration(){
 		if(self::isUnique() AND self::correctPass()){
-			$sql = "INSERT INTO users VALUES ('', ':name', ':email', ':pass', ':sex')";
+			$sql = "INSERT INTO users VALUES('', :name, :email, :pass, :sex)";
 			$parametr = array(
 				"name" => "$this->user_name",
 				"email" => "$this->user_login",
 				"pass" => "$this->password",
 				"sex" => "$this->sex"
 				);
-			$this->databses->myQuery($sql, $parametr);
+			$this->database->myQuery($sql, $parametr, 'set');
 			echo "Вы успешно зарегистрированны";
 		}else{
-			echo "Что то пошло не так";
+			echo "<br> Отредактируйте данные и попробуйте еще раз";
 		}
 	}
 	//Отправляем код подтверждения на email
