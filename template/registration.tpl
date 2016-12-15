@@ -8,5 +8,8 @@
 	<input type="password" name="user_password"><br>
 	Повторите пароль<br>
 	<input type="password" name="repeat_password"><br>
+	Укажите ваш пол:<br> <input type="radio" name="sex" value="м" checked>мужской 
+	<input type="radio" name="sex" value="ж"> 
+	женский<br>
 	<input type="submit" value="Отправить">
 </form>
