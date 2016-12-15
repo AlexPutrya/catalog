@@ -13,7 +13,7 @@ class DB{
 		$pdo = new PDO($this->dsn, $this->user, $this->pass, $this->opt);
 	}
 	// Запрос на получение данных, сам запрос будет формироватся в других классах
-	public function getData($sql, $parametr){
+	public function myQuery($sql, $parametr){
 		$smtm = $this->pdo->prepare($sql);
 		$smtm->execute($parametr);
 	}
