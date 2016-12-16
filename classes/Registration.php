@@ -21,10 +21,8 @@ class Registration{
 		$this->user_login = strtolower($this->user_login);
 		if(!$this->user_login){
 			echo "Поле с электронним адресом должно быть заполненно";
-			exit;
 		}elseif(!preg_match("/[0-9a-z_\.\-]+@[0-9a-z_\.\-]+\.[a-z]{2,3}/i", $this->user_login)){
 			echo "Это не похоже на email";
-			exit;
 		}else{
 			$sql ='SELECT email FROM users WHERE email = :email';
 			$parametr = array("email" => "$this->user_login");
@@ -60,6 +58,7 @@ class Registration{
 				);
 			$this->database->myQuery($sql, $parametr, 'set');
 			echo "Вы успешно зарегистрированны";
+			exit;
 		}else{
 			echo "<br> Отредактируйте данные и попробуйте еще раз";
 		}

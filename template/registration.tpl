@@ -1,4 +1,5 @@
 <?php
+// Получаем данные из POST и регистрируем пользователя
 $post_data = array();
 if(!empty($_POST['user_name'])){
 	foreach ($_POST as $key => $value) {
@@ -8,12 +9,13 @@ if(!empty($_POST['user_name'])){
 	$registration->registration();
 }
 ?>
+<!-- Форма регистрации значение value не сбрасываются на пустое поле -->
 <h1>Регистрация</h1>
 <form action="index.php?page=registration" method="post"><br>
 	Имя<br>
-	<input type="text" name="user_name"><br>
+	<input type="text" name="user_name" value="<?php echo $post_data['user_name'] = empty($_POST['user_name']) ? '' : $post_data['user_name'];  ?>"><br>
 	Логин(email)<br>
-	<input type="text" name="user_login"><br>
+	<input type="text" name="user_login" value="<?php echo $post_data['user_login'] = empty($_POST['user_login']) ? '' : $post_data['user_login'];  ?>"><br>
 	Пароль<br>
 	<input type="password" name="user_password"><br>
 	Повторите пароль<br>
